@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MovieMind - Recomendador de Películas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🎬 MovieMind</h1>
+        <p>Busca películas y recibe recomendaciones con IA</p>
+      </header>
+
+      <main>
+        <!-- Buscador -->
+        <section class="search-section">
+          <input
+            type="text"
+            id="movieSearch"
+            placeholder="Busca una película..."
+            autocomplete="off"
+          />
+
+          <button id="searchBtn">Buscar</button>
+        </section>
+
+        <!-- Resultados de búsqueda -->
+        <section id="searchResults" class="results-grid"></section>
+
+        <!-- Peliculas guardadas -->
+        <section class="saved-section">
+          <h2>Mis peliculas</h2>
+          <div id="savedMovies" class="results-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
