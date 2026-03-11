@@ -19,20 +19,28 @@
           <input
             type="text"
             id="movieSearch"
-            placeholder="Busca una película..."
+            placeholder="Buscar película..."
             autocomplete="off"
           />
-
           <button id="searchBtn">Buscar</button>
         </section>
 
         <!-- Resultados de búsqueda -->
         <section id="searchResults" class="results-grid"></section>
 
-        <!-- Peliculas guardadas -->
+        <!-- Películas guardadas -->
         <section class="saved-section">
-          <h2>Mis peliculas</h2>
+          <h2>Mis Películas</h2>
           <div id="savedMovies" class="results-grid"></div>
+        </section>
+
+        <!-- Recomendaciones con IA -->
+        <section class="recommendations-section">
+          <h2>🤖 Recomendaciones con IA</h2>
+          <button id="getRecommendationsBtn" class="recommend-btn">
+            Obtener Recomendaciones Personalizadas
+          </button>
+          <div id="recommendations" class="results-grid"></div>
         </section>
       </main>
     </div>

@@ -93,6 +93,7 @@ header h1 {
 .movie-title {
     font-weight: bold;
     margin-bottom: 5px;
+    font-size: 1.1em;
 }
 
 .movie-year {
@@ -109,17 +110,166 @@ header h1 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
 }
 
 .save-btn:hover {
     background: #45a049;
 }
 
-.saved-section {
+/* Botones deshabilitados */
+.save-btn:disabled,
+.save-btn.saved {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.save-btn.saved:hover {
+    background-color: #ccc;
+}
+
+/* Botón eliminar */
+.delete-btn {
+    width: 100%;
+    padding: 8px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Botón buscar en recomendaciones */
+.search-recommendation-btn {
+    width: 100%;
+    padding: 8px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.search-recommendation-btn:hover {
+    background-color: #1976D2;
+}
+
+.recommend-btn {
+    padding: 12px 30px;
+    background: #9c27b0;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px 0;
+    transition: background 0.3s;
+}
+
+.recommend-btn:hover {
+    background: #7b1fa2;
+}
+
+.saved-section,
+.recommendations-section {
     margin-top: 40px;
 }
 
-.saved-section h2 {
+.saved-section h2,
+.recommendations-section h2 {
     color: white;
     margin-bottom: 20px;
+}
+
+/* Notificaciones */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    transform: translateX(120%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification-success {
+    background-color: #4CAF50;
+}
+
+.notification-error {
+    background-color: #f44336;
+}
+
+.notification-warning {
+    background-color: #ff9800;
+}
+
+.notification-info {
+    background-color: #2196F3;
+}
+
+/* Loading spinner */
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-style: italic;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    grid-column: 1 / -1;
+}
+
+/* Screen reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Placeholder para pósters */
+.movie-poster[src="placeholder.jpg"] {
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 14px;
 }
